@@ -1,0 +1,6 @@
+#ifndef IMAGEPROCESSINGLIB_PP_LIBRARY_H
+#define IMAGEPROCESSINGLIB_PP_LIBRARY_H
+
+void hello();
+
+#endif
