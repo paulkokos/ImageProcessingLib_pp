@@ -2,12 +2,7 @@
 
 #include <iostream>
 
-void hello() {
+int hello(int a) {
     std::cout << "Hello, World!" << std::endl;
-
-
-
-
-
-
+    return a;
 }
