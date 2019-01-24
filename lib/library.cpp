@@ -1,8 +1,13 @@
 #include "library.h"
 
 #include <iostream>
+#include <cmath>
 
-int hello(int a) {
-    std::cout << "Hello, World!" << std::endl;
-    return a;
+double squareRoot(const double a) {
+    double b = sqrt(a);
+    if(b != b) { // nan check
+        return -1.0;
+    }else{
+        return sqrt(a);
+    }
 }
