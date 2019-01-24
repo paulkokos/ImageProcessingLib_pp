@@ -5,7 +5,7 @@ language: cpp
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-tests
     packages:
       - g++-5
 script:
@@ -24,6 +24,6 @@ before_script:
 after_success:
   - cd ${TRAVIS_BUILD_DIR}
   - lcov --directory . --capture --output-file coverage.info # capture coverage info
-  - lcov --remove coverage.info 'tests/*' '/usr/*' 'test-library*' --output-file coverage.info # filter out system and test code
+  - lcov --remove coverage.info 'tests/*' '/usr/*' 'tests-library*' --output-file coverage.info # filter out system and tests code
   - lcov --list coverage.info # debug before upload
   - coveralls-lcov coverage.info
