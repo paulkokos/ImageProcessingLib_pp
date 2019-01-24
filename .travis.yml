@@ -7,17 +7,14 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-6
+      - g++-5
 script:
-  - CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake -DCOVERAGE=1 .
+  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
   - cmake .
   - cmake --build . -- -j2
-  - ./test
-before_install:
-  - pip install --user cpp-coveralls
 install:
   - cd ${TRAVIS_BUILD_DIR}
-  - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
+   - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
   - tar xf lcov_1.11.orig.tar.gz
   - sudo make -C lcov-1.11/ install
   - gem install coveralls-lcov
@@ -30,4 +27,3 @@ after_success:
   - lcov --remove coverage.info 'tests/*' '/usr/*' 'test-library*' --output-file coverage.info # filter out system and test code
   - lcov --list coverage.info # debug before upload
   - coveralls-lcov coverage.info
-  - coveralls --root . -E ".*gtest.*" -E ".*CMakeFiles.*"
