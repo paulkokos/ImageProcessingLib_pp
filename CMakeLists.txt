@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(ImageProcessingLib_pp)
-
+include(gtest.cmake)
 set(CMAKE_CXX_STANDARD 17)
-
+find_package (Threads)
+target_link_libraries(gtest ${CMAKE_THREAD_LIBS_INIT})
 add_library(ImageProcessingLib_pp lib/library.cpp lib/library.h)
