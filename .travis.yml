@@ -12,3 +12,10 @@ script:
   - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
   - cmake .
   - cmake --build . -- -j2
+install:
+  - gem install coveralls-lcov
+after_success:
+  - lcov --directory . --capture --output-file coverage.info # capture coverage info
+  - lcov --remove coverage.info 'tests/*' '/usr/*' 'test-library*' --output-file coverage.info # filter out system and test code
+  - lcov --list coverage.info # debug before upload
+  - coveralls-lcov coverage.info
