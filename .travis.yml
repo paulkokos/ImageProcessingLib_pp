@@ -11,8 +11,10 @@ addons:
 script:
   - CXX=/usr/bin/g++-6 CC=/usr/bin/gcc-6 cmake -DCOVERAGE=1 .
   - cmake .
-  - cmake --build .
-  - ./tests
+  - cmake --build . -- -j2
+  - ./test
+before_install:
+  - pip install --user cpp-coveralls
 install:
   - cd ${TRAVIS_BUILD_DIR}
   - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
