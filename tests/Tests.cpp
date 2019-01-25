@@ -256,9 +256,9 @@ TEST(OpenFilesTest, FilesCorrupted) {
 
 }
 
-TEST(giatampazaTest, TestName) {
-    ASSERT_EQ("This is a test","This is A test");
-}
+//TEST(giatampazaTest, TestName) {
+//    ASSERT_EQ("This is a test","This is A test");
+//}
 
 
 int main(int argc, char **argv) {

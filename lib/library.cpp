@@ -13,6 +13,4 @@ double squareRoot(const double a) {
 }
 void hello(std::ostream &out) {
     out << "Hello world";
-    int a,b,c;
-    c=a++ + ++b;
 }
