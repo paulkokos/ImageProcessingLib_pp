@@ -17,7 +17,7 @@ addons:
       - gdb
 
 script:
-  - ./configure --enable-gcov && make && make check
   - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
   - cmake --build . -- -j2
+  - ./configure --enable-gcov && make && make check
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
