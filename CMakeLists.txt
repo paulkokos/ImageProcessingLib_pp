@@ -16,8 +16,6 @@ add_library(ImageProcessingLib_pp lib/library.cpp lib/library.h)
 
 #include(gtest.cmake)
 
-
-
 add_executable(MainProgram src/main.cpp)
 #add_executable(Tests tests/Tests.cpp)
 
