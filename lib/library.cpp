@@ -11,3 +11,6 @@ double squareRoot(const double a) {
         return sqrt(a);
     }
 }
+void hello(std::ostream &out) {
+    out << "Hello world";
+}
