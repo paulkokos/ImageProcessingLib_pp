@@ -224,6 +224,41 @@ TEST(SquareRootTest, PositiveNos) {
 
 }
 
+TEST(SquareRootTest, NegativeNos) {
+        ASSERT_EQ(-1.0, squareRoot(-15.0));
+        ASSERT_EQ(-1.0, squareRoot(-0.2));
+}
+
+TEST(OpenFilesTest, OpenTiffFiles) {
+
+}
+TEST(OpenFilesTest, OpenJpegFiles) {
+
+}
+
+TEST(OpenFilesTest, OpenBmpFiles) {
+
+}
+
+TEST(OpenFilesTest, FilesExist) {
+
+}
+
+TEST(OpenFilesTest, FilesFound) {
+
+}
+
+TEST(OpenFilesTest, FilesHaveValidName) {
+
+}
+
+TEST(OpenFilesTest, FilesCorrupted) {
+
+}
+
+
+
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

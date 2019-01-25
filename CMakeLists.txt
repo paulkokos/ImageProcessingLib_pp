@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.5)
 project(ImageProcessingLib_pp)
 set(CMAKE_CXX_STANDARD 17)
 add_compile_options(-Wall -Wextra -Wpedantic)
-
-find_package (Threads)
 find_package(GTest REQUIRED)
+#find_package (Threads)
+
 
 add_library(ImageProcessingLib_pp lib/library.cpp lib/library.h)
 
