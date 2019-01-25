@@ -1,6 +1,7 @@
 #dist: trusty
 sudo: false
 language: cpp
+os: linux
 
 before_install:
   - pip install --user cpp-coveralls
