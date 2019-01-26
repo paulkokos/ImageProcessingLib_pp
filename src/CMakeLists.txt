@@ -3,9 +3,9 @@ add_library(Library "")
 target_sources(
         Library
         PRIVATE
-        /lib/library.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/../lib/library.cpp
         PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/lib/library.h
+        ${CMAKE_CURRENT_LIST_DIR}/../lib/library.h
 )
 
 target_include_directories(
