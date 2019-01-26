@@ -1,23 +1,25 @@
-cmake_minimum_required(VERSION 3.5)
-project(ImageProcessingLib_pp)
-set(CMAKE_CXX_STANDARD 17)
-add_compile_options(-Wall -Wextra -Wpedantic)
-find_package(GTest REQUIRED)
-find_package (Threads)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
+project(ImageProcessingLib-pp CXX)
 
-add_library(ImageProcessingLib_pp lib/library.cpp lib/library.h)
+# place binaries and libraries according to GNU standards
+include(GNUInstallDirs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 
-include_directories(${source_dir}/gtest/include)
+# we use this to get code coverage
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
 
-include_directories(${GTEST_INCLUDE_DIRS})
+add_subdirectory(src)
 
-target_compile_features(ImageProcessingLib_pp PRIVATE cxx_lambda_init_captures)
+include(cmake/googletest.cmake)
+fetch_googletest(
+        ${PROJECT_SOURCE_DIR}/cmake
+        ${PROJECT_BINARY_DIR}/googletest
+)
 
-#include(gtest.cmake)
-
-add_executable(MainProgram src/main.cpp)
-add_executable(Tests tests/Tests.cpp)
-
-target_link_libraries(Tests ${GTEST_LIBRARIES} pthread)
-target_link_libraries(Tests ${CMAKE_THREAD_LIBS_INIT})
+enable_testing()
+add_subdirectory(tests)
