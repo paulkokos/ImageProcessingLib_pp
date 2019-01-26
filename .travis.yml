@@ -18,13 +18,13 @@ before_install:
   - pip install --user cpp-coveralls
 
 script:
+  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
+  - cmake --build . -- -j2
   - rm -rf build/
   - mkdir build
   - cd build
-  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
-  - cmake --build . -- -j2
   - ./configure --enable-gcov && make && make check
-  - ctest
+  - ctest --extra-verbose
 after_success:
   - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*tests/.*.cpp.*"
 
