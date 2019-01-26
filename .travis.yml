@@ -13,12 +13,12 @@ addons:
       - make
       - cmake
       - gdb
-deploy:
-  provider: releases
-  file: $TRAVIS_BUILD_DIR/src/main.cpp
-  on:
-    branch: master
-    repo: paulkokos/ImageProvessingLib-cc
+#deploy:
+#  provider: releases
+#  file: $TRAVIS_BUILD_DIR/src/main.cpp
+#  on:
+#    branch: master
+#    repo: paulkokos/ImageProvessingLib-cc
 before_install:
   - pip install --user cpp-coveralls
 
