@@ -3,7 +3,7 @@ add_library(Library "")
 target_sources(
         Library
         PRIVATE
-        ../lib/library.cpp
+        /lib/library.cpp
         PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/lib/library.h
 )
