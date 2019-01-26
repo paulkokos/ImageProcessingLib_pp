@@ -23,7 +23,7 @@ script:
   - ./configure --enable-gcov && make && make check
   - ctest
 after_success:
-  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*"
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*tests/.*.cpp.*"
 
 notifications:
   email: false
