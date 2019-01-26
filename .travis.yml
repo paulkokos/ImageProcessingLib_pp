@@ -23,8 +23,8 @@ before_install:
   - pip install --user cpp-coveralls
 
 script:
-  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
-  - cmake --build . -- -j2
+#  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
+#  - cmake --build . -- -j2
   - mkdir build && cd build && cmake -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=Debug .. && cmake --build . && cmake --build . --target coveralls
   - ctest --extra-verbose
 after_success:
