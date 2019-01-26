@@ -18,6 +18,9 @@ before_install:
   - pip install --user cpp-coveralls
 
 script:
+  - rm -rf build/
+  - mkdir build
+  - cd build
   - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake .
   - cmake --build . -- -j2
   - ./configure --enable-gcov && make && make check
