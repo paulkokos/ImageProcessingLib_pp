@@ -2,17 +2,17 @@ dist: trusty
 sudo: false
 language: cpp
 
-#addons:
-#  apt:
-#    sources:
-#      - ubuntu-toolchain-r-test
-#    packages:
-#      - g++-6
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6
 
 
-
-matrix:
-  include:
+#
+#matrix:
+#  include:
     #  - os: linux
     #    dist: trusty
     #    compiler: clang
@@ -30,15 +30,15 @@ matrix:
     #    - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
     #    - g++ -v
 
-    - os: linux
-      dist: trusty
-      compiler: gcc
-      env:
-        - COMPILER=g++-4.8
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: [g++-4.8, valgrind]
+#    - os: linux
+#      dist: trusty
+#      compiler: gcc
+#      env:
+#        - COMPILER=g++-4.8
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test']
+#          packages: [g++-4.8, valgrind]
 #    - os: linux
 #      dist: trusty
 #      compiler: gcc
