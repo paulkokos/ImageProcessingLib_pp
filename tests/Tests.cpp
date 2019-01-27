@@ -229,32 +229,32 @@ TEST(SquareRootTest, NegativeNos) {
         ASSERT_EQ(-1.0, squareRoot(-0.2));
 }
 
-TEST(OpenFilesTest, OpenTiffFiles) {
-
-}
-TEST(OpenFilesTest, OpenJpegFiles) {
-
-}
-
-TEST(OpenFilesTest, OpenBmpFiles) {
-
-}
-
-TEST(OpenFilesTest, FilesExist) {
-
-}
-
-TEST(OpenFilesTest, FilesFound) {
-
-}
-
-TEST(OpenFilesTest, FilesHaveValidName) {
-
-}
-
-TEST(OpenFilesTest, FilesCorrupted) {
-
-}
+//TEST(OpenFilesTest, OpenTiffFiles) {
+//
+//}
+//TEST(OpenFilesTest, OpenJpegFiles) {
+//
+//}
+//
+//TEST(OpenFilesTest, OpenBmpFiles) {
+//
+//}
+//
+//TEST(OpenFilesTest, FilesExist) {
+//
+//}
+//
+//TEST(OpenFilesTest, FilesFound) {
+//
+//}
+//
+//TEST(OpenFilesTest, FilesHaveValidName) {
+//
+//}
+//
+//TEST(OpenFilesTest, FilesCorrupted) {
+//
+//}
 
 //TEST(giatampazaTest, TestName) {
 //    ASSERT_EQ("This is a test","This is A test");
